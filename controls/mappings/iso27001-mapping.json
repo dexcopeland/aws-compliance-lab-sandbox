@@ -1,0 +1,15 @@
+{
+  "framework": "ISO/IEC 27001:2022",
+  "mappings": [
+    {
+      "control_id": "CC-001",
+      "annex_a_control": "A.10.1.1",
+      "narrative": "Cryptographic controls ensure encryption at rest for storage services handling sensitive data."
+    },
+    {
+      "control_id": "CC-002",
+      "annex_a_control": "A.9.4.3",
+      "narrative": "System and application access is protected with multi-factor authentication for privileged accounts."
+    }
+  ]
+}

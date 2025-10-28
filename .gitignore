@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+
+# CloudFormation packaged artifacts
+*.template
+packaged-templates/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# AWS SAM / Serverless
+.aws-sam/
+.serverless/
+
+# Logs
+*.log
+
+# Build
+build/
+dist/
+*.egg-info/

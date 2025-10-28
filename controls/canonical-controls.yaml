@@ -1,0 +1,45 @@
+# Canonical Control Library
+
+- control_id: CC-001
+  title: Encrypt data at rest
+  description: Ensure storage services housing sensitive information enforce encryption at rest using AWS-managed or customer-managed keys.
+  objectives:
+    - Protect confidentiality and integrity of stored information.
+  implementation_guidance:
+    - Enable default encryption for S3 buckets.
+    - Encrypt EBS volumes attached to EC2 instances.
+    - Use AWS KMS CMKs for sensitive workloads.
+  mappings:
+    soc2: CC6.1
+    iso27001: A.10.1.1
+    hipaa: 164.312(a)(2)(iv)
+    pci_dss: "3.4"
+    nist_csf: PR.DS-1
+  evidence:
+    - s3_bucket_encryption_settings
+    - ebs_volume_encryption_report
+  automation:
+    - lambda:s3_encryption_check
+    - config_rule:encrypted-volumes-enabled
+
+- control_id: CC-002
+  title: Enforce MFA for privileged access
+  description: Require multi-factor authentication (MFA) for IAM users with privileged permissions.
+  objectives:
+    - Reduce risk of unauthorized access due to credential compromise.
+  implementation_guidance:
+    - Enable AWS account MFA for root user.
+    - Configure IAM policies denying console access without MFA.
+    - Monitor MFA status using AWS Config.
+  mappings:
+    soc2: CC6.3
+    iso27001: A.9.4.3
+    hipaa: 164.312(d)
+    pci_dss: "8.3"
+    nist_csf: PR.AC-7
+  evidence:
+    - iam_users_mfa_report
+    - iam_policy_documentation
+  automation:
+    - lambda:iam_mfa_enforcement_check
+    - config_rule:iam-user-mfa-enabled

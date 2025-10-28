@@ -1,0 +1,15 @@
+{
+  "framework": "SOC 2",
+  "mappings": [
+    {
+      "control_id": "CC-001",
+      "trust_service_criteria": "CC6.1",
+      "narrative": "Storage services enforce encryption at rest using AWS-managed or customer-managed keys."
+    },
+    {
+      "control_id": "CC-002",
+      "trust_service_criteria": "CC6.3",
+      "narrative": "Privileged IAM users are required to authenticate with multi-factor authentication."
+    }
+  ]
+}
